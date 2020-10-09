@@ -1,0 +1,135 @@
+/* GAME MAP STYLES */
+.grid {
+	position: relative;
+	display: inline-grid;
+	background: black;
+}
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	width: 560px;
+	height: 560px;
+	border: solid black;
+}
+
+.grid div {
+	width: 20px;
+	height: 20px;
+}
+
+.dot {
+	display: block;
+	background: goldenrod;
+	border: 8px solid black;
+	box-sizing: border-box;
+}
+
+.wall {
+	border: 1px solid blue;
+	background-color: navy;
+	box-sizing: border-box;
+}
+
+.power-pellet {
+	background-color: goldenrod;
+	border-radius: 10px;
+}
+
+.score-section {
+	font-family: "VT323", monospace;
+	font-size: 3rem;
+	text-align: center;
+	margin: 15px;
+}
+
+/* PAC MAN STYLES */
+.pac-man {
+	background: yellow;
+	border: none;
+	border-radius: 50%;
+	clip-path: polygon(
+		0 0,
+		20px 0,
+		20px -5px,
+		8px 10px,
+		20px 25px,
+		20px 20px,
+		0 20px
+	);
+	animation: chew 0.3s linear forwards infinite;
+}
+
+@keyframes chew {
+	50% {
+		clip-path: polygon(
+			0 0,
+			20px 0,
+			20px 10px,
+			8px 10px,
+			20px 10px,
+			20px 20px,
+			0 20px
+		);
+	}
+}
+
+/* GHOST STYLES */
+
+.blinky {
+	background-color: red;
+}
+
+.pinky {
+	background-color: pink;
+}
+
+.inky {
+	background-color: cyan;
+}
+
+.clyde {
+	background-color: orange;
+}
+
+.ghost {
+	position: relative;
+	border-radius: 10px 10px 2px 2px;
+	border: none;
+}
+
+.ghost::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background: black;
+	border-radius: 50%;
+	left: 3px;
+	top: 5px;
+	border: 2px solid white;
+}
+
+.ghost::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background: black;
+	border-radius: 50%;
+	right: 3px;
+	top: 5px;
+	border: 2px solid white;
+}
+
+.scared {
+	background: blue !important;
+}
+
+.scared-ghost {
+	background-color: aquamarine;
+	border: 0px;
+	background: blue !important;
+}
